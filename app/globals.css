@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --glow-color: rgb(89, 156, 255);
+}
+
+body {
+  font-family: 'SpaceGrotesk', sans-serif;
+}
+
+.galactic-text {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+  color: transparent;
+  text-shadow: 
+    0 0 20px var(--glow-color),
+    0 0 40px var(--glow-color),
+    0 0 80px var(--glow-color);
+  position: relative;
+  letter-spacing: 0.2em;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Smooth scrolling and better transitions */
+* {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+.background-image {
+  background-image: url('../public/sci-fi-background.png');
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-100vh) translateX(50px); }
+}
+
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-progress {
+  animation: progress 2s linear infinite;
+}
+
+/* Space Grotesk font for body */
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Monument Extended font for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Monument Extended', sans-serif;
+}
