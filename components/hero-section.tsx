@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 
 export const HeroSection = () => {
@@ -41,30 +42,41 @@ export const HeroSection = () => {
         </div>
       </header>
 
+
       {/* Hero Section */}
-      <main className="relative min-h-screen inset-0 bg-[url('../public/sci-fi-background.png')] bg-center">
+      <main className="relative min-h-screen">
         {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/sci-fi-background.png"
+            alt="Sci-fi background"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            priority
+          />
+        </div>
 
         {/* Content */}
-        <div className="relative container mx-auto px-4 pt-32">
+        <div className="relative container mx-auto px-4 pt-32 z-10">
           <div className="flex flex-col items-end max-w-6xl mx-auto mt-20">
             {/* Your content here */}
           </div>
 
           {/* Hero Video Dialog */}
-          <div className=" inset-0 flex items-center justify-center z-40">
+          <div className="inset-0 flex items-center justify-center z-40">
             <HeroVideoDialog
               className="dark:hidden block"
               animationStyle="top-in-bottom-out"
               videoSrc="https://www.youtube.com/embed/MOvfHh1S_CM?si=deWwTus5szvT_-3d"
-              thumbnailSrc="_2hfnak0roqrsvr4xf6pv_0 (1).png"
+              thumbnailSrc="/_2hfnak0roqrsvr4xf6pv_0 (1).png"
               thumbnailAlt="Hero Video"
             />
             <HeroVideoDialog
               className="hidden dark:block"
               animationStyle="top-in-bottom-out"
               videoSrc="https://www.youtube.com/embed/MOvfHh1S_CM?si=deWwTus5szvT_-3d"
-              thumbnailSrc="_2hfnak0roqrsvr4xf6pv_0 (1).png"
+              thumbnailSrc="/_2hfnak0roqrsvr4xf6pv_0 (1).png"
               thumbnailAlt="Hero Video"
             />
           </div>
@@ -77,8 +89,8 @@ export const HeroSection = () => {
               </div>
               <div className="flex-1">
                 <p className="text-sm md:text-base text-white font-medium">
-                We are reimagining 
-                <br />human-computer interaction
+                  We are reimagining 
+                  <br />human-computer interaction
                 </p>
               </div>
               <div className="text-xs md:text-sm text-white/70 font-medium">now</div>
