@@ -28,13 +28,12 @@ export const HeroSection = () => {
             <Link href="/" className="text-4xl font-extrabold">
               arc
             </Link>
-            <div className=" md:flex items-center space-x-8">
+            <div className="md:flex items-center space-x-8">
               <Link
-                href="/https://tally.so/r/mVvbJj"
+                href="https://tally.so/r/mVvbJj"
                 className="relative px-6 py-3 rounded-full bg-white text-black hover:bg-opacity-90 transition-colors shadow-custom hover:shadow-custom-hover"
               >
                 Beta access
-                {/* Custom Shadow */}
                 <div className="absolute inset-0 rounded-full shadow-custom-backdrop pointer-events-none" />
               </Link>
             </div>
