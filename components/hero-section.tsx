@@ -30,7 +30,7 @@ export const HeroSection = () => {
             </Link>
             <div className=" md:flex items-center space-x-8">
               <Link
-                href="/beta_access"
+                href="/https://tally.so/r/mVvbJj"
                 className="relative px-6 py-3 rounded-full bg-white text-black hover:bg-opacity-90 transition-colors shadow-custom hover:shadow-custom-hover"
               >
                 Beta access
