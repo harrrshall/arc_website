@@ -1,35 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from "@/components/ui/button";
-import { Play, ChevronRight, Shield, Cpu, Keyboard } from 'lucide-react';
 import Link from 'next/link';
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 
 export const HeroSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    setIsVisible(true);
-
     // Update mouse position on mouse move
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
 
-    // Update window size on resize
-    const handleResize = () => {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    };
-
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', handleResize);
 
     // Cleanup event listeners
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
